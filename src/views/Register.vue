@@ -2,8 +2,8 @@
     <div class="container">
         <h3 style="margin:8px;">Crea una cuenta</h3>
         <hr>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-            <b-form-group id="input-group-1" label="Your Name:" label-for="input-1">
+    <b-form @submit.prevent="register">
+            <b-form-group id="input-group-1" label="Nombre" label-for="input-1">
                 <b-form-input
                 id="input-1"
                 v-model="nombre"
@@ -11,12 +11,11 @@
                 required
                 ></b-form-input>
             </b-form-group>
-      
+            
             <b-form-group
                 id="input-group-2"
-                label="Email address:"
+                label="Email"
                 label-for="input-2"
-                description="We'll never share your email with anyone else."
                 >
                 <b-form-input
                   id="input-2"
@@ -29,7 +28,7 @@
 
             <b-form-group
                 id="input-group-3"
-                label="Password:"
+                label="Password"
                 label-for="input-3"
                 
                 >
@@ -46,6 +45,9 @@
       <b-button type="submit" variant="info" style="margin:8px;">Registrarme</b-button>
 
     </b-form>
+    <div v-if="error">
+      <b-alert show variant="danger">{{ error }}</b-alert>
+    </div>
 
   </div>
 
@@ -54,52 +56,23 @@
 
 <script>
   export default {
-     name: 'Register',
-     data() {
+    data() {
       return {
-        email: '',
         nombre: '',
+        email: '',
         password: '',
         error:''
       }
-     },  
-     methods: {
-         register(){
-             if (email && nombre && password) {
-                 
-             }else{}
-         }
-     }
-    /*data() {
-      return {
-        form: {
-          email: '',
-          name: '',
-          food: null,
-          checked: []
-        },
-        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-        show: true
-      }
-    },
+    },  
+    name: 'Register',
     methods: {
-      onSubmit(event) {
-        event.preventDefault()
-        alert(JSON.stringify(this.form))
-      },
-      onReset(event) {
-        event.preventDefault()
-        // Reset our form values
-        this.form.email = ''
-        this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
-        // Trick to reset/clear native browser form validation state
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
+      register(){
+        if (this.nombre && this.email && this.password) {
+          //se envia form
+        }else{
+            this.error = 'Todos los campos son obligatorios para registrarse'
+            }
       }
-    }*/
+    }
   }
 </script>
