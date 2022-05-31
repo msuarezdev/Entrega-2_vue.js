@@ -1,4 +1,4 @@
-# entrega_1
+# entrega_2
 Hay errores en la conexión con firebase, lo que hace que la vista admin quede colgada
 
 ## Project setup
