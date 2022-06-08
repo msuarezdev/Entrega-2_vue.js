@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav-bar />
+        
         <b-container fluid class="mt-4">
             <b-row>
                 <b-col>
@@ -101,13 +101,11 @@
 </template>
 
 <script>
-import {db}from '@/firebase'
-import navbar from '@/components/nav-bar.vue'
+/*import {db}from '@/firebase'*/
+
 export default {
     name: 'Cart',
-    components: {
-        navbar     
-    },
+    
     data(){
         return{
             ticket: {

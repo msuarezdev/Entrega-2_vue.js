@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import {db} from "@/firebase";
+/*import {db} from "@/firebase";*/
 import NavbarAdmin from "@/components/navbar-admin";
 //import {querySnapshot}  from "@firebase/firestore";
 export default{

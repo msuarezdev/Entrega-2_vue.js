@@ -9,7 +9,13 @@
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item @click="gotocart" active>  <b-icon-cart4></b-icon-cart4></b-nav-item>
+                    <b-nav-item>  
+                        <router-link to="cart"> 
+                            <b-button size="sm" class="my-2 my-sm-0" type="submit" style="margin:5px;" >   
+                                <b-icon-cart4 variant="info"></b-icon-cart4>
+                            </b-button>    
+                        </router-link>
+                    </b-nav-item>
 
                     <b-nav-item-dropdown right>
                         <template v-slot:button-content>
@@ -90,9 +96,6 @@ export default {
         }
     },
     methods:{
-        gotocart(){
-            this.$router.push('/cart')
-        },
         goHome(){
             this.$router.push('/')
         },

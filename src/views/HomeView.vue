@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <navbar />
     <carousel />
     <products />
   </div>
@@ -16,7 +15,7 @@ export default {
   name: 'HomeView',
   components: {
     carousel, 
-    products,
+    products
   }
 }
 </script>
